@@ -1,0 +1,53 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "no-undef": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "tabWidth": 2,
+        "semi": false,
+        "trailingComma": "none",
+        "printWidth": 80,
+        "twigPrintWidth": 80,
+        "twigAlwaysBreakObjects": false,
+        "arrowParens": "avoid",
+        "overrides": [
+          {
+            "files": "*.css",
+            "options": {
+              "singleQuote": false
+            }
+          }
+        ],
+        "twigMultiTags": [
+          "nav,endnav",
+          "switch,case,default,endswitch",
+          "ifchildren,endifchildren",
+          "cache,endcache",
+          "tag,endtag"
+        ],
+        "plugins": ["./node_modules/prettier-plugin-twig-melody"]
+      }
+    ]
+  }
+}
